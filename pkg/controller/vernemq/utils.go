@@ -19,7 +19,8 @@ func prefixedName(name string) string {
 }
 
 func getHostname(instance *vernemqv1alpha1.VerneMQ) string {
-	clusterName := instance.ClusterName
+	clusterName := instance.Spec.ClusterName
+
 	if clusterName == "" {
 		clusterName = "cluster.local"
 	}

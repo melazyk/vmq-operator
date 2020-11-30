@@ -79,6 +79,8 @@ type VerneMQSpec struct {
 	// Defines additional environment variables for the VerneMQ container
 	// The environment variables can be used to template the VMQConfig and VMArgs
 	Env []v1.EnvVar `json:"env,omitempty"`
+	// k8s domainName if not "cluster.local"
+	ClusterName string `json:"clusterName,ommitempty"`
 	// Version of the Plugin Bundler to be deployed
 	BundlerVersion string `json:"bundlerVersion,omitempty"`
 	// Tag of Plugin Bundler container image to be deployed. Defaults to the value of `bundlerVersion`.
